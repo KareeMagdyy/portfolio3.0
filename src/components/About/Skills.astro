@@ -1,0 +1,94 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<section class='skills py-5'>
+  <div class='content-6-mian py-lg-5 py-md-4'>
+    <div class='container'>
+      <div class='content-info-in row'>
+        <div class='content-gd col-lg-5'>
+          <h3 class='title-big mb-4'>
+            Motivated by the Desire to achieve Success
+          </h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem,
+            odit! Perspiciatis et consequuntur non, modi quo mollitia labore
+            laborum voluptas quia officiis fugit soluta molestias quaerat
+            sapiente sunt.
+          </p>
+        </div>
+        <div class='content-gd col-lg-6 offset-lg-1'>
+          <Icon name='cib:csswizardry' size={50} />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills .progress {
+    display: flex;
+    height: 0.5em;
+    overflow: hidden;
+    font-size: 0.75rem;
+    background-color: var(--bg-light);
+    border-radius: 0.25rem;
+  }
+
+  .skills h3 {
+    text-align: left;
+  }
+
+  .skills .progress-info {
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  .skills .progress-bar {
+    background-color: var(--primary-color);
+    transition: width 0.6s ease;
+  }
+
+  .skills .progress-bar-striped {
+    background-image: none;
+    background-size: 1rem 1rem;
+  }
+
+  .skills h6.progress-tittle {
+    font-size: 1.2em;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  @media (max-width: 1440px) {
+    .skills .counter-6-inf-left h4 {
+      line-height: 70px;
+      font-size: 50px;
+      width: 60%;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .skills .content-gd:nth-child(2) {
+      margin: 40px 0 0 0;
+    }
+  }
+
+  @media (max-width: 668px) {
+    .skills .content-6-mian h4 {
+      font-size: 20px;
+    }
+    .skills .content-6-mian h4 span {
+      font-size: 30px;
+      line-height: 40px;
+    }
+  }
+
+  @media (max-width: 568px) {
+    .skills .content-6-mian h4 span {
+      font-size: 26px;
+      line-height: 26px;
+    }
+  }
+</style>

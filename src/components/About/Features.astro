@@ -1,0 +1,114 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<section class='py-5 about-features'>
+  <div class='container py-lg-5 py-3'>
+    <h5 class='title-small mb-2'>Hello</h5>
+    <h3 class='title-big mb-4'>
+      I Can give your business a new Creative start right away!
+    </h3>
+    <p>
+      I am a freelancer based in the United Kingdom and i have been building
+      noteworthy UX/UI designs and websites for years, which comply with the
+      latest design trends. I help convert a vision and an idea into meaningful
+      and useful products. Having a sharp eye for product evolution helps me
+      prioritize tasks, iterate fast and deliver faster
+    </p>
+    <div class='row features-main mt-5 pt-md-3' id='features'>
+      <div class='col-lg-4 col-md-6 feature-gird'>
+        <div class='row features-hny-inner-gd'>
+          <div class='col-md-2 col-2 featured_grid_left'>
+            <div class='icon_left_grid'>
+              <Icon
+                name='mdi:responsive'
+                size='32'
+                aria-hidden='true'
+                class='feature-icon'
+              />
+            </div>
+          </div>
+          <div class='col-md-10 col-10 featured_grid_right_info'>
+            <h4><a class='link-hny' href='#url'>Responsive Design</a></h4>
+            <p>
+              Lorem ipsum dolor sit amet elit consec tetur adipisi elit., rem!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class='col-lg-4 col-md-6 feature-gird mt-md-0 mt-4'>
+        <div class='row features-hny-inner-gd'>
+          <div class='col-md-2 col-2 featured_grid_left'>
+            <div class='icon_left_grid'>
+              <Icon
+                name='fa:pencil-square-o'
+                size='32'
+                aria-hidden='true'
+                class='feature-icon'
+              />
+            </div>
+          </div>
+          <div class='col-md-10 col-10 featured_grid_right_info'>
+            <h4><a class='link-hny' href='#url'>Powerful Editor</a></h4>
+            <p>
+              Lorem ipsum dolor sit amet elit consec tetur adipisi elit., rem!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class='col-lg-4 col-md-6 feature-gird mt-lg-0 mt-md-5 mt-4'>
+        <div class='row features-hny-inner-gd'>
+          <div class='col-md-2 col-2 featured_grid_left'>
+            <div class='icon_left_grid'>
+              <Icon
+                name='fa:desktop'
+                size='32'
+                aria-hidden='true'
+                class='feature-icon'
+              />
+            </div>
+          </div>
+          <div class='col-md-10 col-10 featured_grid_right_info'>
+            <h4><a class='link-hny' href='#url'>Creative Design</a></h4>
+            <p>
+              Lorem ipsum dolor sit amet elit consec tetur adipisi elit., rem!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-features {
+    background-color: var(--bg-light);
+  }
+
+  .features-main h4 a {
+    font-size: 28px;
+    line-height: 34px;
+    color: var(--heading-color);
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  .feature-icon {
+    color: var(--primary-color);
+    margin-top: 5px;
+  }
+
+  .features-main .features-hny-inner-gd:hover .feature-icon {
+    color: var(--secondary-color);
+    transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+  }
+
+  @media only screen and (max-width: 480px) {
+    .features-main h4 a {
+      font-size: 24px;
+    }
+  }
+</style>

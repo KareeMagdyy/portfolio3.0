@@ -1,0 +1,142 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<section class='about-me' id='about'>
+  <div class='midd-w3 py-5'>
+    <div class='container py-lg-5 py-md-3'>
+      <div class='row'>
+        <div class='col-lg-4'>
+          <div class='position-relative'>
+            <img
+              src='assets/images/myphoto3.jpg'
+              alt=''
+              class='radius-image img-fluid aboutme-img'
+            />
+          </div>
+        </div>
+        <div class='col-lg-8 mt-lg-0 mt-5'>
+          <h5 class='title-small mb-2'>Hello, I am Front-End Developer</h5>
+          <h3 class='title-big'>Having O3 Years of Experience</h3>
+          <p class='mt-4'>
+            Lorem ipsum viverra feugiat. Pellen tesque libero ut justo, ultrices
+            in ligula. Semper at tempufddfel. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Non quae, fugiat consequatur
+            voluptatem nihil ad. Lorem ipsum dolor sit amet.
+          </p>
+          <div class='my-info mt-4'>
+            <div class='single-info'>
+              <span>Name:</span>
+              <p>Kareem Magdy</p>
+            </div>
+            <div class='single-info'>
+              <span>Age:</span>
+              <p>30 Years</p>
+            </div>
+            <div class='single-info'>
+              <span>From:</span>
+              <p>Giza, EG</p>
+            </div>
+            <div class='single-info'>
+              <span>Email:</span>
+              <p>
+                <a href='mailto:contact@kareem-magdy.com'
+                  >contact@kareem-magdy.com</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class='my-social mt-lg-5 mt-4'>
+            <a href='#download' class='btn btn-style btn-primary'>Download CV</a
+            >
+            <ul class='social m-0 p-0'>
+              <li>
+                <a
+                  href='https://www.linkedin.com/in/kareem-el-zomor/'
+                  target='_blank'
+                  ><Icon name='brandico:linkedin-rect' size={18} /></a
+                >
+              </li>
+              <li>
+                <a href='https://github.com/KareeMagdyy' target='_blank'
+                  ><Icon name='mdi:github-box' size={25} /></a
+                >
+              </li>
+              <li>
+                <a href='https://www.facebook.com/kemoelzomor' target='_blank'
+                  ><Icon name='brandico:facebook-rect' size={18} /></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-me ul.social li {
+    display: inline-block;
+    margin-left: 6px;
+  }
+
+  .about-me ul.social li a {
+    color: #aaa;
+    width: 32px;
+    display: block;
+    text-align: center;
+  }
+
+  .about-me ul.social li a span.fa {
+    font-size: 22px;
+    line-height: 32px;
+  }
+
+  .about-me ul.social li a:hover {
+    color: var(--primary-color);
+  }
+
+  .about-me ul.social:before {
+    background-color: #999;
+    content: "";
+    height: 2px;
+    margin-right: 10px;
+    width: 60px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .about-me .my-social {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    grid-gap: 50px;
+  }
+
+  .aboutme-img {
+    filter: grayscale(100) contrast(1.6);
+  }
+
+  @media only screen and (max-width: 500px) {
+    .about-me .my-social {
+      grid-gap: 20px;
+    }
+    .about-me ul.social:before {
+      margin-right: 5px;
+      width: 50px;
+    }
+    .about-me .my-info {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media only screen and (max-width: 454px) {
+    .about-me .my-social {
+      grid-template-columns: auto;
+    }
+    .about-me a.btn {
+      order: 2;
+    }
+  }
+</style>

@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import AboutMe from "../components/about/AboutMe.astro";
+import Features from "../components/about/Features.astro";
+import Skills from "../components/about/Skills.astro";
+import Newsletter from "../components/about/Newsletter.astro";
+import Certificates from "../components/about/Certificates.astro";
+---
+
+<Layout title='About me' description='Descreption About me' curPage='about'>
+  <main>
+    <Breadcrumbs curPage='About Me' />
+    <AboutMe />
+    <Features />
+    <Skills />
+    <Newsletter />
+    <Certificates />
+  </main>
+</Layout>

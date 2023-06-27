@@ -1,0 +1,116 @@
+<section class='abouthy-img-grids'>
+  <div class='img-one'>
+    <img src='assets/images/g5.jpg' alt=' ' class='img-fluid' />
+  </div>
+  <div class='img-one content-mid'>
+    <h3 class='title-big'>
+      Stay up to date, Subscribe to the free Newsletter!
+    </h3>
+    <form action='#url' method='GET' class='subscribe-form'>
+      <input
+        type='email'
+        name='email'
+        placeholder='Enter your email'
+        required
+      />
+      <button type='submit' class='btn'>Subscribe</button>
+    </form>
+  </div>
+  <div class='img-one'>
+    <img src='assets/images/g3.jpg' alt=' ' class='img-fluid' />
+  </div>
+</section>
+
+<style>
+  .abouthy-img-grids {
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    display: grid;
+  }
+
+  .img-one.content-mid {
+    background: var(--bg-light);
+    min-height: 100%;
+    align-items: center;
+    display: grid;
+    padding: 0px 50px;
+  }
+
+  .img-one.content-mid input {
+    color: var(--font-color);
+    background: transparent;
+    padding: 0px 20px;
+    font-size: 1.2em;
+    outline: none;
+    width: 350px;
+    height: 65px;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border: 1px solid var(--border-color);
+  }
+
+  .img-one.content-mid button {
+    font-weight: 700;
+    text-align: center;
+    width: 143px;
+    background: var(--primary-color);
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  .img-one.content-mid h3 {
+    align-self: end;
+  }
+
+  .subscribe-form {
+    display: flex;
+    align-self: flex-start;
+    margin-top: 30px;
+  }
+
+  @media only screen and (max-width: 991px) {
+    .img-one.content-mid {
+      padding: 80px 50px;
+    }
+    .abouthy-img-grids {
+      grid-template-columns: 0fr 1fr 0fr;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .img-one.content-mid input {
+      width: 75%;
+    }
+  }
+
+  @media only screen and (max-width: 568px) {
+    .img-one.content-mid {
+      padding: 60px 15px;
+      min-height: auto;
+    }
+    .img-one.content-mid input {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 415px) {
+    .subscribe-form {
+      display: block;
+      border-radius: var(--border-radius);
+    }
+    .img-one.content-mid button {
+      width: 100%;
+      margin-top: 10px;
+      height: 65px;
+      border-radius: var(--border-radius);
+    }
+  }
+</style>

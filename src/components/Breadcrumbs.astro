@@ -1,0 +1,73 @@
+---
+import { Icon } from "astro-icon";
+export interface Props {
+  curPage: string;
+}
+const { curPage } = Astro.props;
+---
+
+<section class='breadcrumbs text-center'>
+  <div class='breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4'>
+    <div class='container py-2'>
+      <h2 class='title'>{curPage}</h2>
+      <ul class='breadcrumbs-custom-path mt-2'>
+        <li><a href='/'>Home</a></li>
+        <li class='active'>
+          <Icon
+            name='ion:arrow-right-c'
+            size={20}
+            class='mx-2'
+            aria-hidden='true'
+          />
+
+          {curPage}
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .breadcrumbs {
+    margin-top: 90px;
+    background: var(--bg-light);
+  }
+  .breadcrumbs h2.title {
+    font-size: 50px;
+    font-weight: 500;
+  }
+  .breadcrumbs .breadcrumbs-custom-path li {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.2em;
+    line-height: 1.5;
+    font-weight: 400;
+    text-transform: capitalize;
+  }
+  .breadcrumbs .breadcrumbs-custom-path li span.fa {
+    font-size: 12px;
+    vertical-align: 2px;
+  }
+
+  @media only screen and (max-width: 991px) {
+    .breadcrumbs {
+      margin-top: 80px;
+    }
+    .breadcrumbs h2.title {
+      font-size: 40px;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .breadcrumbs {
+      margin-top: 75px;
+    }
+    .breadcrumbs h2.title {
+      font-size: 32px;
+    }
+    .breadcrumbs .breadcrumbs-custom-path li {
+      font-size: 1.1em;
+    }
+  }
+</style>

@@ -1,0 +1,68 @@
+---
+import { Icon } from "astro-icon";
+import Totop from "./Totop.astro";
+let date = new Date();
+let year = date.getFullYear();
+---
+
+<footer class='footer py-sm-5 py-4'>
+  <div class='container'>
+    <div class='footer-content'>
+      <div class='row'>
+        <div class='col-lg-8 footer-left'>
+          <p class='m-0'>Kareem Magdy © Copyright {year}</p>
+        </div>
+        <div
+          class='col-lg-4 footer-right text-lg-right text-center mt-lg-0 mt-3'
+        >
+          <ul class='social m-0 p-0'>
+            <li>
+              <a
+                href='https://www.linkedin.com/in/kareem-el-zomor/'
+                target='_blank'
+                ><Icon name='brandico:linkedin-rect' size={18} /></a
+              >
+            </li>
+            <li>
+              <a href='https://github.com/KareeMagdyy' target='_blank'
+                ><Icon name='mdi:github-box' size={25} /></a
+              >
+            </li>
+            <li>
+              <a href='https://www.facebook.com/kemoelzomor' target='_blank'
+                ><Icon name='brandico:facebook-rect' size={18} /></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<Totop />
+
+<style>
+  .footer {
+    border-top: 1px solid var(--border-color);
+  }
+  .footer ul.social li {
+    display: inline-block;
+    margin-left: 6px;
+  }
+  .footer ul.social li a {
+    color: #aaa;
+    width: 30px;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+  }
+  .footer ul.social li a:hover {
+    color: var(--primary-color);
+  }
+
+  @media only screen and (max-width: 991px) {
+    .footer .footer-left {
+      text-align: center;
+    }
+  }
+</style>
