@@ -1,5 +1,21 @@
 ---
 import { Icon } from "astro-icon";
+
+const rowOneSkills = [
+  { name: "akar-icons:html-fill", displayText: "HTML5" },
+  { name: "akar-icons:css-fill", displayText: "CSS3" },
+  { name: "akar-icons:javascript-fill", displayText: "JavaScript" },
+  { name: "akar-icons:react-fill", displayText: "React" },
+  { name: "simple-icons:astro", displayText: "Asrto" },
+];
+
+const rowTwoSkills = [
+  { name: "akar-icons:bootstrap-fill", displayText: "Boorstrap" },
+  { name: "ion:logo-sass", displayText: "SASS" },
+  { name: "mdi:tailwind", displayText: "TailwindCss" },
+  { name: "simple-icons:git", displayText: "Git" },
+  { name: "ph:figma-logo", displayText: "Figma" },
+];
 ---
 
 <section class='skills py-5'>
@@ -8,17 +24,42 @@ import { Icon } from "astro-icon";
       <div class='content-info-in row'>
         <div class='content-gd col-lg-5'>
           <h3 class='title-big mb-4'>
-            Motivated by the Desire to achieve Success
+            A Skillset to Propel Your Digital Success
           </h3>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem,
-            odit! Perspiciatis et consequuntur non, modi quo mollitia labore
-            laborum voluptas quia officiis fugit soluta molestias quaerat
-            sapiente sunt.
+            Welcome to my skills section, where expertise meets innovation. With
+            a proven track record of powering remarkable digital experiences, I
+            possess a diverse skillset that equips me to tackle any front-end
+            development challenge.
           </p>
         </div>
-        <div class='content-gd col-lg-6 offset-lg-1'>
-          <Icon name='cib:csswizardry' size={50} />
+        <div
+          class='content-gd col-lg-6 offset-lg-1 d-flex flex-column justify-content-between'
+        >
+          <div class='d-flex align-items-center justify-content-around'>
+            {
+              rowOneSkills.map((skill) => {
+                return (
+                  <div class='d-flex flex-column align-items-center'>
+                    <Icon class='skill-icon' name={skill.name} size={60} />
+                    <p class='skill-display mt-2'>{skill.displayText}</p>
+                  </div>
+                );
+              })
+            }
+          </div>
+          <div class='d-flex align-items-center justify-content-around'>
+            {
+              rowTwoSkills.map((skill) => {
+                return (
+                  <div class=' mt-5 mt-lg-0 d-flex flex-column align-items-center'>
+                    <Icon class='skill-icon' name={skill.name} size={60} />
+                    <p class='skill-display mt-2'>{skill.displayText}</p>
+                  </div>
+                );
+              })
+            }
+          </div>
         </div>
       </div>
     </div>
@@ -26,47 +67,13 @@ import { Icon } from "astro-icon";
 </section>
 
 <style>
-  .skills .progress {
-    display: flex;
-    height: 0.5em;
-    overflow: hidden;
-    font-size: 0.75rem;
-    background-color: var(--bg-light);
-    border-radius: 0.25rem;
+  .skill-icon {
+    color: var(--primary-color);
+    position: relative;
   }
 
-  .skills h3 {
-    text-align: left;
-  }
-
-  .skills .progress-info {
-    margin-bottom: 30px;
-    text-align: left;
-  }
-
-  .skills .progress-bar {
-    background-color: var(--primary-color);
-    transition: width 0.6s ease;
-  }
-
-  .skills .progress-bar-striped {
-    background-image: none;
-    background-size: 1rem 1rem;
-  }
-
-  .skills h6.progress-tittle {
-    font-size: 1.2em;
+  .skill-display {
     color: var(--heading-color);
-    margin-bottom: 10px;
-    font-weight: 500;
-  }
-
-  @media (max-width: 1440px) {
-    .skills .counter-6-inf-left h4 {
-      line-height: 70px;
-      font-size: 50px;
-      width: 60%;
-    }
   }
 
   @media (max-width: 991px) {

@@ -14,11 +14,15 @@ const contactPage = curPage === "contact";
 <header id='site-header' class='fixed-top'>
   <div class='container'>
     <nav class='navbar navbar-expand-lg stroke'>
-      <a class='navbar-brand' href='index.html'>Kareem Magdy</a>
-      <!-- if logo is image enable this   
-      <a class="navbar-brand" href="#index.html">
-          <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-      </a> -->
+      <!-- <a class='navbar-brand' href='index.html'>Kareem Magdy</a> -->
+      <a class='navbar-brand' href='/'>
+        <img
+          src='/assets/images/logo-light.png'
+          alt='Kareem Magdy Logo'
+          title='Kareem Magdy'
+          class='main-logo'
+        />
+      </a>
       <button
         class='navbar-toggler collapsed bg-gradient'
         type='button'
@@ -105,24 +109,24 @@ const contactPage = curPage === "contact";
   }
 
   .mode-container .sun-tggle {
-    display: none;
+    display: block;
   }
 
   .mode-container .moon-tggle {
-    display: block;
+    display: none;
   }
 
   input:checked + .mode-container .sun-tggle {
-    display: block;
+    display: none;
   }
 
   input:checked + .mode-container .moon-tggle {
-    display: none;
+    display: block;
   }
 
   /*-- //dark and light mode styling --*/
   .nav-toggle-icon {
-    color: var(--primary-color);
+    color: var(--font-color);
   }
   .nav-toggle-icon:focus {
     outline: none;

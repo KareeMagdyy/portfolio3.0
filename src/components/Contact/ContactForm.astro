@@ -1,3 +1,9 @@
+---
+import { Icon } from "astro-icon";
+import successSVG from "/assets/images/success-form.svg";
+import failedSVG from "/assets/images/failed-form.svg";
+---
+
 <section class='contact-1 py-5'>
   <div class='contacts-9 py-lg-5 py-md-4'>
     <div class='container'>
@@ -9,7 +15,7 @@
             </div>
             <div class='cont-right'>
               <h6>Call Me</h6>
-              <p><a href='tel:+44 99 555 42'>+123 45 67 89</a></p>
+              <p><a href='tel:+201111258669'>+20 111 125 8669</a></p>
             </div>
           </div>
           <div class='cont-top margin-up'>
@@ -19,8 +25,8 @@
             <div class='cont-right'>
               <h6>Email Me</h6>
               <p>
-                <a href='mailto:example@mail.com' class='mail'
-                  >example@mail.com</a
+                <a href='mailto:contact@kareem-magdy.com' class='mail'
+                  >contact@kareem-magdy.com</a
                 >
               </p>
             </div>
@@ -31,62 +37,149 @@
             </div>
             <div class='cont-right'>
               <h6>Location</h6>
-              <p>
-                Address here, 208 Trainer Avenue street, Illinois, UK - 62617.
-              </p>
+              <p>Giza, Egypt</p>
+            </div>
+          </div>
+          <div class='cont-top margin-up'>
+            <div class='cont-left text-center'>
+              <span class='fa fa-map-marker text-primary'></span>
+            </div>
+            <div class='cont-right'>
+              <a href='https://wa.me/201111258669' target='_blank'>
+                <Icon name='simple-icons:whatsapp' size='25' />
+              </a>
+              <a href='https://t.me/KareeMagdyy' target='_blank' class='mx-3'>
+                <Icon name='simple-icons:telegram' size='25' />
+              </a>
             </div>
           </div>
         </div>
         <div class='map-content-9'>
-          <form
-            action='https://sendmail.w3layouts.com/submitForm'
-            method='post'
-          >
+          <form id='form'>
             <div class='twice-two'>
               <input
                 type='text'
                 class='form-control'
-                name='w3lName'
-                id='w3lName'
+                name='Name'
+                id='Name'
                 placeholder='Name'
-                required=''
+                required
               />
               <input
                 type='email'
                 class='form-control'
-                name='w3lSender'
-                id='w3lSender'
+                name='Email'
+                id='Email'
                 placeholder='Email'
-                required=''
+                required
               />
             </div>
             <div class='twice'>
               <input
                 type='text'
                 class='form-control'
-                name='w3lSubject'
-                id='w3lSubject'
+                name='Subject'
+                id='Subject'
                 placeholder='Subject'
-                required=''
+                required
               />
             </div>
+            <input type='text' class='honey-bot d-none' />
             <textarea
-              name='w3lMessage'
+              name='Message'
               class='form-control'
-              id='w3lMessage'
-              placeholder='Message'
-              required=''></textarea>
+              id='Message'
+              placeholder='Message'></textarea>
             <div class='text-right'>
-              <button type='submit' class='btn btn-primary btn-style mt-4'
-                >Send Message</button
+              <button
+                type='submit'
+                id='submit'
+                class='btn btn-primary btn-style mt-4'>Send Message</button
               >
             </div>
+            <div class='text-right d-none form-loader'>
+              <button
+                class='btn btn-primary btn-style mt-4'
+                type='button'
+                disabled
+              >
+                <span
+                  class='spinner-border spinner-border-sm'
+                  role='status'
+                  aria-hidden='true'></span>
+                Loading...
+              </button>
+            </div>
           </form>
+          <div class='form-success py-2 d-none'>
+            <div class='img-wrapper mx-auto'>
+              <img src={successSVG} alt='Success' />
+            </div>
+            <div class='alert alert-primary' role='alert'>
+              Success! Thank you for reaching out. I will get back to you
+              shortly.
+            </div>
+          </div>
+          <div class='form-failed py-2 d-none'>
+            <div class='img-wrapper mx-auto'>
+              <img src={failedSVG} alt='failed' />
+            </div>
+            <div class='alert alert-danger' role='alert'>
+              Oops! Something went wrong. Please check your form submission and
+              try again. If the issue persists, feel free to reach out to me
+              directly. Apologies for any inconvenience caused.
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script type='text/javascript'>
+  const form = document.querySelector("#form");
+  const formInputs = document.querySelectorAll("#form input");
+  const formTextArea = document.querySelector("#form textarea");
+  const fromHoney = document.querySelector(".honey-bot");
+  const submitButton = document.querySelector("#submit");
+  const formLoading = document.querySelector(".form-loader");
+  const formSuccess = document.querySelector(".form-success");
+  const formFailed = document.querySelector(".form-failed");
+  const scriptURL =
+    "https://script.google.com/macros/s/AKfycbyxoWaKo9DudtgAniNCh4pufzcbsZGnwd5jllOAfbCyB3UMFemmUk3pX-FFbg9G2mX7Xw/exec";
+
+  const formSubmitted = (status) => {
+    formInputs.forEach((input) => (input.value = ""));
+    formTextArea.value = "";
+    form.style.opacity = "0";
+    setTimeout(() => {
+      form.style.display = "none";
+      status.classList.remove("d-none");
+      setTimeout(() => {
+        status.style.opacity = "1";
+      }, 50);
+    }, 300);
+  };
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (fromHoney.value === "" || fromHoney.value === null) {
+      submitButton.disabled = true;
+      submitButton.style.display = "none";
+      formLoading.classList.remove("d-none");
+      let requestBody = new FormData(form);
+      fetch(scriptURL, { method: "POST", body: requestBody })
+        .then((response) => {
+          formSubmitted(formSuccess);
+        })
+        .catch((error) => {
+          formSubmitted(formFailed);
+        });
+    } else {
+      formSubmitted(formSuccess);
+    }
+  });
+</script>
 
 <style>
   .margin-up {
@@ -175,16 +268,21 @@
     box-shadow: none;
   }
 
-  .cont-details h6 a {
-    color: var(--heading-color);
+  #form,
+  .form-success {
+    transition: all 250ms;
   }
 
-  .map-iframe iframe {
-    -webkit-filter: var(--iframe-filter);
-    -moz-filter: var(--iframe-filter);
-    -ms-filter: var(--iframe-filter);
-    -o-filter: var(--iframe-filter);
-    filter: var(--iframe-filter);
+  .img-wrapper {
+    max-width: 400px;
+  }
+
+  .img-wrapper img {
+    max-width: 100%;
+  }
+
+  .cont-details h6 a {
+    color: var(--heading-color);
   }
 
   /* contact1-responsive */

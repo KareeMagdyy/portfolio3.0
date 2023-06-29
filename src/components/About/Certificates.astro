@@ -1,72 +1,95 @@
+---
+import { Icon } from "astro-icon";
+
+const certificatesInfo = [
+  {
+    name: "Version Control",
+    by: "Meta",
+    date: "November, 2022",
+    url: "https://www.coursera.org/account/accomplishments/verify/8GP2WXFCJV3E",
+  },
+  {
+    name: "React Basics",
+    by: "Meta",
+    date: "October, 2022",
+    url: "https://www.coursera.org/account/accomplishments/verify/WPF9UYHN4TJR",
+  },
+  {
+    name: "Interactivity with JavaScript",
+    by: "University of Michigan",
+    date: "November, 2021",
+    url: "https://www.coursera.org/account/accomplishments/verify/RT4SBZPDJXPQ",
+  },
+  {
+    name: "HTML & CSS",
+    by: "IBM",
+    date: "June, 2021",
+    url: "https://www.credly.com/badges/a7802cad-43af-4530-9b61-8705d214fed5",
+  },
+  {
+    name: "Responsive Web Design",
+    by: " free Code Camp",
+    date: "June, 2021",
+    url: "https://www.freecodecamp.org/certification/kareemagdyy/responsive-web-design",
+  },
+  {
+    name: "CSS - The Complete Guide 2021",
+    by: "Academind",
+    date: "April, 2021",
+    url: "https://www.udemy.com/certificate/UC-3f36e23f-1896-4eeb-b6e3-82b3cdd189b3/",
+  },
+  {
+    name: "Front End Development Track",
+    by: "Udacity",
+    date: "March, 2021",
+    url: "https://drive.google.com/file/d/1COHu7UK0VouAo7uzxlqDW_DURFsKuhIN/",
+  },
+  {
+    name: "Front-End Web UI Frameworks and Tools",
+    by: "HKUST",
+    date: "February, 2021",
+    url: "https://www.coursera.org/account/accomplishments/verify/WZPJ8YT2CNVX",
+  },
+];
+---
+
 <section class='certificates'>
   <div class='achievements py-5' id='services'>
     <div class='container py-lg-5'>
       <h5 class='title-small text-center'>My achievements</h5>
-      <h3 class='title-big text-center mb-sm-5 mb-4'>Personal Awards</h3>
+      <h3 class='title-big text-center mb-sm-5 mb-4'>Certificates</h3>
       <div class='row'>
-        <div class='col-lg-6 item'>
-          <div class='card'>
-            <div class='box-wrap'>
-              <div class='icon'>
-                <span class='fa fa-globe'></span>
+        {
+          certificatesInfo.map((item) => {
+            return (
+              <div class='col-sm-6  col-lg-4 item'>
+                <div class='card'>
+                  <div class='box-wrap'>
+                    <h4>
+                      <a href={item.url} target='_blank'>
+                        {item.name}
+                      </a>
+                    </h4>
+                    <div class='from d-flex align-items-center mt-1'>
+                      <Icon name='uil:university' size='16' />
+                      <p class='ml-2'>{item.by}</p>
+                    </div>
+                    <div class='from d-flex align-items-center mt-2'>
+                      <Icon name='ic:twotone-calendar-month' size='16' />
+                      <p class='ml-2'>{item.date}</p>
+                    </div>
+                    <div class='from d-flex align-items-center mt-2'>
+                      <Icon name='ph:link-bold' size='16' />
+                      <a href={item.url} target='_blank' class='ml-2'>
+                        See credential
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h4><a href='#url'>Website of the day</a></h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
-                reiciendis labore quisquam suscipit qui veritatis. voluptas quia
-                officiis fugit soluta sunt
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class='col-lg-6 item'>
-          <div class='card'>
-            <div class='box-wrap'>
-              <div class='icon'>
-                <span class='fa fa-laptop'></span>
-              </div>
-              <h4><a href='#url'> Awards Site Of The Day</a></h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
-                reiciendis labore quisquam suscipit qui veritatis. voluptas quia
-                officiis fugit soluta sunt
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class='col-lg-6 item'>
-          <div class='card'>
-            <div class='box-wrap mb-lg-0'>
-              <div class='icon'>
-                <span class='fa fa-trophy'></span>
-              </div>
-              <h4><a href='#url'>Honorable mention award</a></h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
-                reiciendis labore quisquam suscipit qui veritatis. voluptas quia
-                officiis fugit soluta sunt
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class='col-lg-6 item'>
-          <div class='card'>
-            <div class='box-wrap mb-0'>
-              <div class='icon'>
-                <span class='fa fa-laptop'></span>
-              </div>
-              <h4><a href='#url'>Designer of the Company</a></h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
-                reiciendis labore quisquam suscipit qui veritatis. voluptas quia
-                officiis fugit soluta sunt
-              </p>
-            </div>
-          </div>
-        </div>
+            );
+          })
+        }
       </div>
     </div>
   </div>
@@ -78,8 +101,14 @@
     background: none;
   }
 
+  @media (min-width: 576px) {
+    .certificates .box-wrap {
+      min-height: 250px;
+    }
+  }
+
   .certificates .box-wrap {
-    padding: 40px 30px;
+    padding: 30px;
     transition: all 0.5s ease 0s;
     border-radius: var(--border-radius);
     background-color: var(--bg-light);
@@ -104,15 +133,20 @@
     margin: 0 auto;
   }
 
-  .certificates .icon span.fa {
+  .certificates .from svg {
     color: var(--primary-color);
-    font-size: 30px;
+  }
+
+  .certificates .from p,
+  .certificates .from a {
+    color: var(--font-color);
+    font-size: 1rem;
   }
 
   .certificates .box-wrap h4 a {
     font-size: 24px;
     font-weight: 600;
-    margin-top: 25px;
+    margin-top: 0;
     margin-bottom: 15px;
     display: block;
     color: var(--heading-color);
