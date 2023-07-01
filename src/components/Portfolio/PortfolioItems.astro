@@ -1,0 +1,198 @@
+---
+import { Icon } from "astro-icon";
+
+const portfolioItems = [
+  {
+    title: "KMDB Movie Database",
+    imgSrc: "/assets/images/portfolio/kmdb.png",
+    liveURL: "https://kmdb.netlify.app/",
+    repoURL: "https://github.com/KareeMagdyy/kmdb-react",
+    technologies: [
+      {
+        name: "React",
+        icon: "akar-icons:react-fill",
+      },
+      {
+        name: "TailwindCSS",
+        icon: "mdi:tailwind",
+      },
+      {
+        name: "JSON",
+        icon: "bx:bxs-file-json",
+      },
+      {
+        name: "Firebase",
+        icon: "mdi:firebase",
+      },
+      {
+        name: "Netlify",
+        icon: "bx:bxl-netlify",
+      },
+    ],
+  },
+  {
+    title: "Peerless Technology",
+    imgSrc: "/assets/images/portfolio/peerless-tech.png",
+    liveURL: "https://peerlesstec.com/",
+    repoURL: null,
+    technologies: [
+      {
+        name: "Astro",
+        icon: "simple-icons:astro",
+      },
+      {
+        name: "Bootstrap",
+        icon: "akar-icons:bootstrap-fill",
+      },
+      {
+        name: "JSX",
+        icon: "ph:file-jsx",
+      },
+      {
+        name: "Partytown",
+        icon: "mdi:party-popper",
+      },
+      {
+        name: "cPanel",
+        icon: "simple-icons:cpanel",
+      },
+    ],
+  },
+  {
+    title: "Smart Residence",
+    imgSrc: "/assets/images/portfolio/smart-residence.png",
+    liveURL: "https://smart-residence.net/",
+    repoURL: null,
+    technologies: [
+      {
+        name: "Astro",
+        icon: "simple-icons:astro",
+      },
+      {
+        name: "Bootstrap",
+        icon: "akar-icons:bootstrap-fill",
+      },
+      {
+        name: "JSX",
+        icon: "ph:file-jsx",
+      },
+      {
+        name: "Partytown",
+        icon: "mdi:party-popper",
+      },
+      {
+        name: "Hostinger",
+        icon: "clarity:host-solid",
+      },
+    ],
+  },
+  {
+    title: "Bootcamp",
+    imgSrc: "/assets/images/portfolio/bootcamp.png",
+    liveURL: "https://bootcamp-demo.netlify.app/",
+    repoURL: "https://github.com/KareeMagdyy/bs-bootcamp-demo",
+    technologies: [
+      {
+        name: "HTML5",
+        icon: "akar-icons:html-fill",
+      },
+      {
+        name: "CSS3",
+        icon: "akar-icons:css-fill",
+      },
+      {
+        name: "Bootstrap",
+        icon: "akar-icons:bootstrap-fill",
+      },
+      {
+        name: "Netlify",
+        icon: "bx:bxl-netlify",
+      },
+    ],
+  },
+];
+---
+
+<section id='portfolio '>
+  <div class='container my-5 py-5'>
+    <div class='portfolio-items row'>
+      {
+        portfolioItems.map((item) => {
+          return (
+            <div class='col-md-4'>
+              <div class='card'>
+                <img
+                  src={item.imgSrc}
+                  class='card-img-top mt-5 mb-4'
+                  alt={item.title}
+                  loading='lazy'
+                />
+                <div class='card-body'>
+                  <div class='card-tech mb-4 mt-2 d-flex'>
+                    {item.technologies.map((tech) => (
+                      <Icon name={tech.icon} size='32' title={tech.name} />
+                    ))}
+                  </div>
+                  <h4 class='card-title'>{item.title}</h4>
+
+                  <div class='links d-flex'>
+                    <a
+                      href={item.liveURL}
+                      target='_blank'
+                      class='link btn btn-primary mr-2 mt-3 d-flex justify-content-center align-items-center'
+                    >
+                      <Icon name='fa:link' size='12' /> <span>Visit Site</span>
+                    </a>
+                    {item.repoURL && (
+                      <a
+                        href={item.repoURL}
+                        target='_blank'
+                        class='link btn btn-primary mt-3 d-flex justify-content-center align-items-center'
+                      >
+                        <Icon name='fa:github' size='12' /> <span>Github</span>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+
+  <style>
+    .card {
+      transition: all 0.5s ease 0s;
+      border-radius: var(--border-radius);
+      background-color: var(--bg-light);
+      position: relative;
+      margin-bottom: 20px;
+      border: 1px solid var(--bg-light);
+      overflow: hidden;
+    }
+
+    .card-img-top {
+      scale: 1.3;
+      transition: all 350ms linear;
+    }
+
+    .card:hover .card-img-top {
+      scale: 1.5;
+    }
+
+    .card-body {
+      padding: 30px;
+    }
+
+    .link.d-flex {
+      gap: 0.4rem;
+    }
+
+    .card-tech {
+      color: var(--primary-color);
+      gap: 1rem;
+    }
+  </style>
+</section>

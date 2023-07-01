@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import PortfolioItems from "../components/Portfolio/PortfolioItems.astro";
+import PortfolioHead from "../components/Portfolio/PortfolioHead.astro";
+---
+
+<Layout title='Potfolio' description='Portfolio Desc' curPage='portfolio'>
+  <main>
+    <Breadcrumbs curPage='Portfolio' />
+    <PortfolioHead />
+    <PortfolioItems />
+  </main>
+</Layout>

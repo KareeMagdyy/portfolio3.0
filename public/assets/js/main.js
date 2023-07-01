@@ -124,3 +124,27 @@ function topFunction() {
 }
 
 topBtn.addEventListener("click", topFunction);
+
+//get user location
+
+const getLocation = () => {
+  fetch("https://geolocation-db.com/json/")
+    .then((res) => res.json())
+    .then((data) => {
+      localStorage.setItem("country", data.country_code);
+    });
+};
+
+if (localStorage.getItem("country") === null) {
+  window.addEventListener("load", getLocation);
+}
+
+//preloader
+
+let preloader = document.querySelector("#pre-loader");
+if (preloader) {
+  window.addEventListener("load", () => {
+    preloader.remove();
+    document.body.style.overflowY = "auto";
+  });
+}

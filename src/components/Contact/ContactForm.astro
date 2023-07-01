@@ -85,6 +85,7 @@ import failedSVG from "/assets/images/failed-form.svg";
               />
             </div>
             <input type='text' class='honey-bot d-none' />
+            <input type='text' class='d-none' name='Country' id='Country' />
             <textarea
               name='Message'
               class='form-control'
@@ -135,51 +136,6 @@ import failedSVG from "/assets/images/failed-form.svg";
     </div>
   </div>
 </section>
-
-<script type='text/javascript'>
-  const form = document.querySelector("#form");
-  const formInputs = document.querySelectorAll("#form input");
-  const formTextArea = document.querySelector("#form textarea");
-  const fromHoney = document.querySelector(".honey-bot");
-  const submitButton = document.querySelector("#submit");
-  const formLoading = document.querySelector(".form-loader");
-  const formSuccess = document.querySelector(".form-success");
-  const formFailed = document.querySelector(".form-failed");
-  const scriptURL =
-    "https://script.google.com/macros/s/AKfycbyxoWaKo9DudtgAniNCh4pufzcbsZGnwd5jllOAfbCyB3UMFemmUk3pX-FFbg9G2mX7Xw/exec";
-
-  const formSubmitted = (status) => {
-    formInputs.forEach((input) => (input.value = ""));
-    formTextArea.value = "";
-    form.style.opacity = "0";
-    setTimeout(() => {
-      form.style.display = "none";
-      status.classList.remove("d-none");
-      setTimeout(() => {
-        status.style.opacity = "1";
-      }, 50);
-    }, 300);
-  };
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    if (fromHoney.value === "" || fromHoney.value === null) {
-      submitButton.disabled = true;
-      submitButton.style.display = "none";
-      formLoading.classList.remove("d-none");
-      let requestBody = new FormData(form);
-      fetch(scriptURL, { method: "POST", body: requestBody })
-        .then((response) => {
-          formSubmitted(formSuccess);
-        })
-        .catch((error) => {
-          formSubmitted(formFailed);
-        });
-    } else {
-      formSubmitted(formSuccess);
-    }
-  });
-</script>
 
 <style>
   .margin-up {
@@ -311,3 +267,53 @@ import failedSVG from "/assets/images/failed-form.svg";
     }
   }
 </style>
+
+<script type='text/javascript'>
+  const form = document.querySelector("#form");
+  const formInputs = document.querySelectorAll("#form input");
+  const formTextArea = document.querySelector("#form textarea");
+  const countryInput = document.querySelector("#Country");
+  const fromHoney = document.querySelector(".honey-bot");
+  const submitButton = document.querySelector("#submit");
+  const formLoading = document.querySelector(".form-loader");
+  const formSuccess = document.querySelector(".form-success");
+  const formFailed = document.querySelector(".form-failed");
+  const scriptURL =
+    "https://script.google.com/macros/s/AKfycbyxoWaKo9DudtgAniNCh4pufzcbsZGnwd5jllOAfbCyB3UMFemmUk3pX-FFbg9G2mX7Xw/exec";
+
+  const formSubmitted = (status) => {
+    formInputs.forEach((input) => (input.value = ""));
+    formTextArea.value = "";
+    form.style.opacity = "0";
+    setTimeout(() => {
+      form.style.display = "none";
+      status.classList.remove("d-none");
+      setTimeout(() => {
+        status.style.opacity = "1";
+      }, 50);
+    }, 300);
+  };
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    countryInput.value = localStorage.getItem("country");
+    if (fromHoney.value === "" || fromHoney.value === null) {
+      submitButton.disabled = true;
+      submitButton.style.display = "none";
+      formLoading.classList.remove("d-none");
+      let requestBody = new FormData(form);
+      fetch(scriptURL, {
+        method: "POST",
+        body: requestBody,
+      })
+        .then((response) => {
+          formSubmitted(formSuccess);
+        })
+        .catch((error) => {
+          formSubmitted(formFailed);
+        });
+    } else {
+      formSubmitted(formSuccess);
+    }
+  });
+</script>

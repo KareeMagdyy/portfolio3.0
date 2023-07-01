@@ -14,6 +14,7 @@
         placeholder='Enter your email'
         required
       />
+      <input type='text' class='d-none' name='Country' id='Country' />
       <button type='submit' id='submit' class='btn'>Subscribe</button>
       <button class='btn btn-primary d-none loading-btn' type='button' disabled>
         <span
@@ -158,6 +159,7 @@
 
 <script type='text/javascript'>
   const form = document.querySelector("#form");
+  const countryInput = document.querySelector("#Country");
   const submitButton = document.querySelector("#submit");
   const loadingBtn = document.querySelector(".loading-btn");
   const newsSuccess = document.querySelector(".news-success");
@@ -179,6 +181,7 @@
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
+    countryInput.value = localStorage.getItem("country");
     submitButton.disabled = true;
     submitButton.classList.add("d-none");
     loadingBtn.classList.remove("d-none");

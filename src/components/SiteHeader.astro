@@ -9,6 +9,7 @@ const { curPage } = Astro.props;
 const homePage = curPage === "home";
 const aboutPage = curPage === "about";
 const contactPage = curPage === "contact";
+const portfolioPage = curPage === "portfolio";
 ---
 
 <header id='site-header' class='fixed-top'>
@@ -46,6 +47,13 @@ const contactPage = curPage === "contact";
           <li class={aboutPage ? "nav-item active" : "nav-item"}>
             <a class='nav-link' href='/about'
               >About {aboutPage && <span class='sr-only'>(current)</span>}</a
+            >
+          </li>
+          <li class={portfolioPage ? "nav-item active" : "nav-item"}>
+            <a class='nav-link' href='/portfolio'
+              >Portfolio {
+                portfolioPage && <span class='sr-only'>(current)</span>
+              }</a
             >
           </li>
           <li class={contactPage ? "nav-item active" : "nav-item"}>
