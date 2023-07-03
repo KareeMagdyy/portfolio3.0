@@ -6,7 +6,7 @@ import { Icon } from "astro-icon";
   <div class='midd-w3 py-5'>
     <div class='container py-lg-5 py-md-3'>
       <div class='row'>
-        <div class='col-lg-4'>
+        <div class='col-lg-4' data-aos='fade-up'>
           <div class='position-relative'>
             <img
               src='/assets/images/myphoto3.jpg'
@@ -15,7 +15,7 @@ import { Icon } from "astro-icon";
             />
           </div>
         </div>
-        <div class='col-lg-8 mt-lg-0 mt-5'>
+        <div class='col-lg-8 mt-lg-0 mt-5' data-aos='fade-down'>
           <h5 class='title-small mb-2'>Hello, I am Front-End Developer</h5>
           <h3 class='title-big'>Having O3 Years of Experience</h3>
           <p class='mt-4'>
@@ -77,6 +77,9 @@ import { Icon } from "astro-icon";
 </section>
 
 <style>
+  #about {
+    overflow-x: hidden;
+  }
   .about-me ul.social li {
     display: inline-block;
     margin-left: 6px;

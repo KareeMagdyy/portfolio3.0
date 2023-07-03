@@ -7,48 +7,56 @@ const certificatesInfo = [
     by: "Meta",
     date: "November, 2022",
     url: "https://www.coursera.org/account/accomplishments/verify/8GP2WXFCJV3E",
+    delay: "150",
   },
   {
     name: "React Basics",
     by: "Meta",
     date: "October, 2022",
     url: "https://www.coursera.org/account/accomplishments/verify/WPF9UYHN4TJR",
+    delay: "300",
   },
   {
     name: "Interactivity with JavaScript",
     by: "University of Michigan",
     date: "November, 2021",
     url: "https://www.coursera.org/account/accomplishments/verify/RT4SBZPDJXPQ",
+    delay: "450",
   },
   {
     name: "HTML & CSS",
     by: "IBM",
     date: "June, 2021",
     url: "https://www.credly.com/badges/a7802cad-43af-4530-9b61-8705d214fed5",
+    delay: "150",
   },
   {
     name: "Responsive Web Design",
     by: " free Code Camp",
     date: "June, 2021",
     url: "https://www.freecodecamp.org/certification/kareemagdyy/responsive-web-design",
+    delay: "300",
   },
   {
     name: "CSS - The Complete Guide 2021",
     by: "Academind",
     date: "April, 2021",
     url: "https://www.udemy.com/certificate/UC-3f36e23f-1896-4eeb-b6e3-82b3cdd189b3/",
+    delay: "450",
   },
   {
     name: "Front End Development Track",
     by: "Udacity",
     date: "March, 2021",
     url: "https://drive.google.com/file/d/1COHu7UK0VouAo7uzxlqDW_DURFsKuhIN/",
+    delay: "150",
   },
   {
     name: "Front-End Web UI Frameworks and Tools",
     by: "HKUST",
     date: "February, 2021",
     url: "https://www.coursera.org/account/accomplishments/verify/WZPJ8YT2CNVX",
+    delay: "300",
   },
 ];
 ---
@@ -56,13 +64,21 @@ const certificatesInfo = [
 <section class='certificates'>
   <div class='achievements py-5' id='services'>
     <div class='container py-lg-5'>
-      <h5 class='title-small text-center'>My achievements</h5>
-      <h3 class='title-big text-center mb-sm-5 mb-4'>Certificates</h3>
+      <h5 class='title-small text-center' data-aos='fade-in'>
+        My achievements
+      </h5>
+      <h3 class='title-big text-center mb-sm-5 mb-4' data-aos='fade-in'>
+        Certificates
+      </h3>
       <div class='row'>
         {
           certificatesInfo.map((item) => {
             return (
-              <div class='col-sm-6  col-lg-4 item'>
+              <div
+                class='col-sm-6  col-lg-4 item'
+                data-aos='fade-in'
+                data-aos-delay={item.delay}
+              >
                 <div class='card'>
                   <div class='box-wrap'>
                     <h4>

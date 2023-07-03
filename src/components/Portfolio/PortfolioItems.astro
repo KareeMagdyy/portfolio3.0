@@ -7,6 +7,7 @@ const portfolioItems = [
     imgSrc: "/assets/images/portfolio/kmdb.png",
     liveURL: "https://kmdb.netlify.app/",
     repoURL: "https://github.com/KareeMagdyy/kmdb-react",
+    aosDelay: "150",
     technologies: [
       {
         name: "React",
@@ -35,6 +36,7 @@ const portfolioItems = [
     imgSrc: "/assets/images/portfolio/peerless-tech.png",
     liveURL: "https://peerlesstec.com/",
     repoURL: null,
+    aosDelay: "300",
     technologies: [
       {
         name: "Astro",
@@ -63,6 +65,7 @@ const portfolioItems = [
     imgSrc: "/assets/images/portfolio/smart-residence.png",
     liveURL: "https://smart-residence.net/",
     repoURL: null,
+    aosDelay: "450",
     technologies: [
       {
         name: "Astro",
@@ -91,6 +94,7 @@ const portfolioItems = [
     imgSrc: "/assets/images/portfolio/bootcamp.png",
     liveURL: "https://bootcamp-demo.netlify.app/",
     repoURL: "https://github.com/KareeMagdyy/bs-bootcamp-demo",
+    aosDelay: "600",
     technologies: [
       {
         name: "HTML5",
@@ -119,7 +123,11 @@ const portfolioItems = [
       {
         portfolioItems.map((item) => {
           return (
-            <div class='col-md-4'>
+            <div
+              class='col-md-4'
+              data-aos='fade-up'
+              data-aos-delay={item.aosDelay}
+            >
               <div class='card'>
                 <img
                   src={item.imgSrc}
