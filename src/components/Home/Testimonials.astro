@@ -9,168 +9,34 @@
       <!-- /grids -->
       <div class='testimonial-width'>
         <div id='owl-demo1' class='owl-carousel owl-theme mb-4'>
-          <div class='item'>
+          <div class='item mx-auto'>
             <div class='testimonial-content'>
               <div class='testimonial'>
                 <blockquote>
                   <q
-                    >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Velit beatae laudantium voluptate rem ullam dolore nisi
-                    voluptatibus esse quasi, doloribus tempora. Dolores
-                    molestias adipisci dolor sit amet!.</q
+                    >He got it done on time and correctly. Thanks!</q
                   >
                 </blockquote>
                 <div class='testi-des'>
                   <div class='test-img'>
                     <img
-                      src='assets/images/team1.jpg'
+                      src='/assets/images/testimonials/01.jfif'
                       class='img-fluid'
                       alt='client-img'
                     />
                   </div>
                   <div class='peopl align-self'>
-                    <h3>John wilson</h3>
-                    <p class='indentity'>Seattle, Washington</p>
+                    <h3>Christian Sanchez</h3>
+                    <p class='indentity'>Client</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class='item'>
-            <div class='testimonial-content'>
-              <div class='testimonial'>
-                <blockquote>
-                  <q
-                    >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Velit beatae laudantium voluptate rem ullam dolore nisi
-                    voluptatibus esse quasi, doloribus tempora. Dolores
-                    molestias adipisci dolor sit amet!.</q
-                  >
-                </blockquote>
-                <div class='testi-des'>
-                  <div class='test-img'>
-                    <img
-                      src='assets/images/team2.jpg'
-                      class='img-fluid'
-                      alt='client-img'
-                    />
-                  </div>
-                  <div class='peopl align-self'>
-                    <h3>Julia sakura</h3>
-                    <p class='indentity'>Seattle, Washington</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class='item'>
-            <div class='testimonial-content'>
-              <div class='testimonial'>
-                <blockquote>
-                  <q
-                    >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Velit beatae laudantium voluptate rem ullam dolore nisi
-                    voluptatibus esse quasi, doloribus tempora. Dolores
-                    molestias adipisci dolor sit amet!.</q
-                  >
-                </blockquote>
-                <div class='testi-des'>
-                  <div class='test-img'>
-                    <img
-                      src='assets/images/team3.jpg'
-                      class='img-fluid'
-                      alt='client-img'
-                    />
-                  </div>
-                  <div class='peopl align-self'>
-                    <h3>Roy Linderson</h3>
-                    <p class='indentity'>Seattle, Washington</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class='item'>
-            <div class='testimonial-content'>
-              <div class='testimonial'>
-                <blockquote>
-                  <q
-                    >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Velit beatae laudantium voluptate rem ullam dolore nisi
-                    voluptatibus esse quasi, doloribus tempora. Dolores
-                    molestias adipisci dolor sit amet!.</q
-                  >
-                </blockquote>
-                <div class='testi-des'>
-                  <div class='test-img'>
-                    <img
-                      src='assets/images/team4.jpg'
-                      class='img-fluid'
-                      alt='client-img'
-                    />
-                  </div>
-                  <div class='peopl align-self'>
-                    <h3>Mike Thyson</h3>
-                    <p class='indentity'>Seattle, Washington</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class='item'>
-            <div class='testimonial-content'>
-              <div class='testimonial'>
-                <blockquote>
-                  <q
-                    >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Velit beatae laudantium voluptate rem ullam dolore nisi
-                    voluptatibus esse quasi, doloribus tempora. Dolores
-                    molestias adipisci dolor sit amet!.</q
-                  >
-                </blockquote>
-                <div class='testi-des'>
-                  <div class='test-img'>
-                    <img
-                      src='assets/images/team2.jpg'
-                      class='img-fluid'
-                      alt='client-img'
-                    />
-                  </div>
-                  <div class='peopl align-self'>
-                    <h3>Laura gill</h3>
-                    <p class='indentity'>Seattle, Washington</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class='item'>
-            <div class='testimonial-content'>
-              <div class='testimonial'>
-                <blockquote>
-                  <q
-                    >Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Velit beatae laudantium voluptate rem ullam dolore nisi
-                    voluptatibus esse quasi, doloribus tempora. Dolores
-                    molestias adipisci dolor sit amet!.</q
-                  >
-                </blockquote>
-                <div class='testi-des'>
-                  <div class='test-img'>
-                    <img
-                      src='assets/images/team3.jpg'
-                      class='img-fluid'
-                      alt='client-img'
-                    />
-                  </div>
-                  <div class='peopl align-self'>
-                    <h3>Smith Johnson</h3>
-                    <p class='indentity'>Seattle, Washington</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
+
+
+
         </div>
       </div>
     </div>
@@ -193,6 +59,10 @@
   .clients .testimonial-width {
     max-width: 1050px;
     margin: auto;
+  }
+
+  .item {
+    max-width: fit-content;
   }
 
   .clients .testimonial {
@@ -220,11 +90,14 @@
     color: var(--para-color);
   }
 
-  .clients blockquote q::before {
-    font-size: 50px;
+
+  .clients blockquote q::before,
+  .clients blockquote q::after{
+    font-size: 25px;
     color: var(--primary-color);
     line-height: 0.8;
-    padding-top: 8px;
+    /* padding-top: 8px; */
+    padding-inline: 0.25rem;
     font-weight: 600;
     display: inline-block;
     font-family: "Merriweather", serif;
