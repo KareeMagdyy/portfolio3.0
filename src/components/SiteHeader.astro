@@ -12,68 +12,68 @@ const contactPage = curPage === "contact";
 const portfolioPage = curPage === "portfolio";
 ---
 
-<header id='site-header' class='fixed-top'>
-  <div class='container'>
-    <nav class='navbar navbar-expand-lg stroke'>
+<header id="site-header" class="fixed-top">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg stroke">
       <!-- <a class='navbar-brand' href='index.html'>Kareem Magdy</a> -->
-      <a class='navbar-brand' href='/'>
+      <a class="navbar-brand" href="/">
         <img
-          src='/assets/images/logo-light.png'
-          alt='Kareem Magdy Logo'
-          title='Kareem Magdy'
-          class='main-logo'
+          src="https://res.cloudinary.com/dadonc0ng/image/upload/v1689584903/Portfolio/Main%20Assets/logo-light_izhwdz.webp"
+          alt="Kareem Magdy Logo"
+          title="Kareem Magdy"
+          class="main-logo"
         />
       </a>
       <button
-        class='navbar-toggler collapsed bg-gradient'
-        type='button'
-        data-toggle='collapse'
-        data-target='#navbarTogglerDemo02'
-        aria-controls='navbarTogglerDemo02'
-        aria-expanded='false'
-        aria-label='Toggle navigation'
+        class="navbar-toggler collapsed bg-gradient"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
       >
-        <Icon name='fa:bars' size={26} class='nav-toggle-icon show' />
-        <Icon name='fa:times' size={26} class='nav-toggle-icon hide' />
+        <Icon name="fa:bars" size={26} class="nav-toggle-icon show" />
+        <Icon name="fa:times" size={26} class="nav-toggle-icon hide" />
       </button>
 
-      <div class='collapse navbar-collapse' id='navbarTogglerDemo02'>
-        <ul class='navbar-nav ml-auto'>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto">
           <li class={homePage ? "nav-item active" : "nav-item"}>
-            <a class='nav-link' href='/'
-              >Home {homePage && <span class='sr-only'>(current)</span>}</a
+            <a class="nav-link" href="/"
+              >Home {homePage && <span class="sr-only">(current)</span>}</a
             >
           </li>
           <li class={aboutPage ? "nav-item active" : "nav-item"}>
-            <a class='nav-link' href='/about'
-              >About {aboutPage && <span class='sr-only'>(current)</span>}</a
+            <a class="nav-link" href="/about"
+              >About {aboutPage && <span class="sr-only">(current)</span>}</a
             >
           </li>
           <li class={portfolioPage ? "nav-item active" : "nav-item"}>
-            <a class='nav-link' href='/portfolio'
+            <a class="nav-link" href="/portfolio"
               >Portfolio {
-                portfolioPage && <span class='sr-only'>(current)</span>
+                portfolioPage && <span class="sr-only">(current)</span>
               }</a
             >
           </li>
           <li class={contactPage ? "nav-item active" : "nav-item"}>
-            <a class='nav-link' href='/contact'
+            <a class="nav-link" href="/contact"
               >Contact {
-                contactPage && <span class='sr-only'>(current)</span>
+                contactPage && <span class="sr-only">(current)</span>
               }</a
             >
           </li>
         </ul>
       </div>
       <!-- toggle switch for light and dark theme -->
-      <div class='mobile-position'>
-        <nav class='navigation'>
-          <div class='theme-switch-wrapper'>
-            <label class='theme-switch' for='checkbox'>
-              <input type='checkbox' id='checkbox' />
-              <div class='mode-container'>
-                <Icon name='wi:day-sunny' size={24} class='sun-tggle' />
-                <Icon name='ph:moon-stars-light' size={24} class='moon-tggle' />
+      <div class="mobile-position">
+        <nav class="navigation">
+          <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+              <input type="checkbox" id="checkbox" />
+              <div class="mode-container">
+                <Icon name="wi:day-sunny" size={24} class="sun-tggle" />
+                <Icon name="ph:moon-stars-light" size={24} class="moon-tggle" />
               </div>
             </label>
           </div>

@@ -4,8 +4,10 @@ const toggleSwitch = document.querySelector(
 const currentTheme = localStorage.getItem("theme");
 
 const mainLogo = document.querySelector(".navbar-brand .main-logo");
-const darkThemeLogo = "/assets/images/logo-light.png";
-const lightThemeLogo = "/assets/images/logo-black.png";
+const darkThemeLogo =
+  "https://res.cloudinary.com/dadonc0ng/image/upload/v1689584903/Portfolio/Main%20Assets/logo-light_izhwdz.webp";
+const lightThemeLogo =
+  "https://res.cloudinary.com/dadonc0ng/image/upload/v1689584903/Portfolio/Main%20Assets/logo-black_zxeiyz.webp";
 
 if (currentTheme) {
   document.documentElement.setAttribute("data-theme", currentTheme);
