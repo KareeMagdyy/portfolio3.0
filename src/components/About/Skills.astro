@@ -5,6 +5,7 @@ const rowOneSkills = [
   { name: "akar-icons:html-fill", displayText: "HTML5" },
   { name: "akar-icons:css-fill", displayText: "CSS3" },
   { name: "akar-icons:javascript-fill", displayText: "JavaScript" },
+  { name: "cib:typescript", displayText: "TypeScript" },
   { name: "akar-icons:react-fill", displayText: "React" },
   { name: "simple-icons:astro", displayText: "Asrto" },
 ];
@@ -15,15 +16,16 @@ const rowTwoSkills = [
   { name: "mdi:tailwind", displayText: "TailwindCss" },
   { name: "simple-icons:git", displayText: "Git" },
   { name: "ph:figma-logo", displayText: "Figma" },
+  { name: "simple-icons:adobexd", displayText: "Xd" },
 ];
 ---
 
-<section class='skills py-5' data-aos='fade-in'>
-  <div class='content-6-mian py-lg-5 py-md-4'>
-    <div class='container'>
-      <div class='content-info-in row'>
-        <div class='content-gd col-lg-5'>
-          <h3 class='title-big mb-4'>
+<section class="skills py-5" data-aos="fade-in">
+  <div class="content-6-mian py-lg-5 py-md-4">
+    <div class="container">
+      <div class="content-info-in row">
+        <div class="content-gd col-lg-5">
+          <h3 class="title-big mb-4">
             A Skillset to Propel Your Digital Success
           </h3>
           <p>
@@ -34,27 +36,27 @@ const rowTwoSkills = [
           </p>
         </div>
         <div
-          class='content-gd col-lg-6 offset-lg-1 d-flex flex-column justify-content-between'
+          class="content-gd col-lg-6 offset-lg-1 d-flex flex-column justify-content-between"
         >
-          <div class='d-flex align-items-center justify-content-around'>
+          <div class="d-flex align-items-center justify-content-around">
             {
               rowOneSkills.map((skill) => {
                 return (
-                  <div class='d-flex flex-column align-items-center'>
-                    <Icon class='skill-icon' name={skill.name} size={60} />
-                    <p class='skill-display mt-2'>{skill.displayText}</p>
+                  <div class="d-flex flex-column align-items-center">
+                    <Icon class="skill-icon" name={skill.name} size={60} />
+                    <p class="skill-display mt-2">{skill.displayText}</p>
                   </div>
                 );
               })
             }
           </div>
-          <div class='d-flex align-items-center justify-content-around'>
+          <div class="d-flex align-items-center justify-content-around">
             {
               rowTwoSkills.map((skill) => {
                 return (
-                  <div class=' mt-5 mt-lg-0 d-flex flex-column align-items-center'>
-                    <Icon class='skill-icon' name={skill.name} size={60} />
-                    <p class='skill-display mt-2'>{skill.displayText}</p>
+                  <div class=" mt-5 mt-lg-0 d-flex flex-column align-items-center">
+                    <Icon class="skill-icon" name={skill.name} size={60} />
+                    <p class="skill-display mt-2">{skill.displayText}</p>
                   </div>
                 );
               })
