@@ -2,11 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import ContactForm from "../components/Contact/ContactForm.astro";
+import ContactHero from "../components/Contact/ContactHero.astro";
 ---
 
-<Layout title="Let's Connect and Collaborate: Reach Out to Me for Web Development" description="Contact me today to discuss your frontend web development needs. Whether you have a project in mind or simply want to explore potential collaborations, I'm here to listen, advise, and bring your vision to life. Let's connect and create exceptional digital experiences together. Reach out via the contact form or the provided contact information below. I look forward to hearing from you!" curPage='contact'>
+<Layout
+  title="Let's Connect: Reach Out to Me for Web Development"
+  description="Reach out to Kareem Magdy, a skilled frontend web developer, and explore collaboration opportunities. Connect for innovative digital solutions today!"
+  canonical="https://kareem-magdy.com/contact/"
+  curPage="contact"
+>
   <main>
-    <Breadcrumbs curPage='Contact' />
+    <Breadcrumbs curPage="Contact" />
+    <ContactHero />
     <ContactForm />
   </main>
 </Layout>
