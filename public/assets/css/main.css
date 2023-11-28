@@ -33,6 +33,7 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
   --hero-contrast: contrast(1);
+  --clients-bg: rgba(147, 107, 232, 0.05);
 }
 
 *,
@@ -9863,6 +9864,7 @@ a.text-dark:focus {
   --iframe-filter: grayscale(100%);
   --widget-bg: #131617;
   --hero-contrast: contrast(1.6);
+  --clients-bg: rgba(147, 107, 232, 0.06);
 }
 
 [data-theme="light"] {
@@ -9878,6 +9880,7 @@ a.text-dark:focus {
   --iframe-filter: grayscale(0%);
   --widget-bg: #3f3a64;
   --hero-contrast: contrast(1);
+  --clients-bg: rgba(147, 107, 232, 0.06);
 }
 
 .noscroll {
