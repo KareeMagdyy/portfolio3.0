@@ -1,5 +1,10 @@
 ---
 import { Icon } from "astro-icon";
+const birthYear = 1993;
+const expStarted = 2020;
+let curYear = new Date().getFullYear();
+let age = curYear - birthYear;
+let yearsOfExp = curYear - expStarted;
 ---
 
 <section class="about-me" id="about">
@@ -18,13 +23,13 @@ import { Icon } from "astro-icon";
         </div>
         <div class="col-lg-8 mt-lg-0 mt-5" data-aos="fade-down">
           <h5 class="title-small mb-2">Hello, I am Front-End Developer</h5>
-          <h2 class="title-big">Having 3 Years of Experience</h2>
+          <h2 class="title-big">Having {yearsOfExp}+ Years of Experience</h2>
           <p class="mt-4">
-            With over 3 years of hands-on experience in crafting exceptional
+            With over {yearsOfExp} years of hands-on experience in crafting exceptional
             digital experiences, I bring a wealth of knowledge and skills to the
-            table. From transforming designs into pixel-perfect layouts to
-            optimizing user interfaces for seamless interactions, my passion
-            lies in creating visually stunning and highly functional websites.
+            table. From transforming designs into pixel-perfect layouts to optimizing
+            user interfaces for seamless interactions, my passion lies in creating
+            visually stunning and highly functional websites.
           </p>
           <div class="my-info mt-4">
             <div class="single-info">
@@ -33,7 +38,7 @@ import { Icon } from "astro-icon";
             </div>
             <div class="single-info">
               <span>Age:</span>
-              <p>30 Years</p>
+              <p>{age} Years</p>
             </div>
             <div class="single-info">
               <span>From:</span>
